@@ -5,11 +5,15 @@ namespace App\Http\Controllers\APIControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\AccountingPanal;
 use Validator;
 class GetController extends Controller
 {
     public function ListCategories(){
         return Category::all();
+    }
+    public function ListOwners(){
+        return AccountingPanal::all();
     }
     public function GetCategoryByName($name = null){
         $category = Category::where('name',$name)->first();

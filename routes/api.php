@@ -23,3 +23,7 @@ Route::group(['prefix' => 'category/'], function () {
     Route::get('getCategoryByName/{name?}',[GetController::class,'GetCategoryByName'] );
     Route::post('AddNewCategory',[GetController::class,'AddNewCategory'] );
 });
+
+Route::group(['prefix' => 'accounting/'], function () {
+    Route::get('getAllOwners',[GetController::class,'ListOwners'] );
+});
