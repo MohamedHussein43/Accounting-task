@@ -1,0 +1,282 @@
+
+.mode
+{
+	width:50px;
+	height:20px;
+	float:right;
+	position:relative;
+	right:150px;
+	top:7px;
+	margin-right:8px;
+	background-color:#1b262c;
+	color:#888888;
+	border-radius:10px;
+	cursor:pointer;
+	border:none;
+}
+.mode:hover
+{
+	box-shadow:none;
+	
+}
+
+.hotelinfo
+{
+	background-color:white;
+	margin:5 0 50 40;
+	padding:20px;
+	border-radius:10px;
+	width:1200px;
+	
+}
+.section1
+{
+	float:left;
+	box-shadow: 0 0 5px 5px #141414
+}
+button
+{
+	height:70px;
+	width:70px;
+	cursor:pointer;
+}
+button:hover
+{
+	box-shadow: 0 0 3px 3px #141414;
+}
+.buttonImg
+{
+	height:70px;
+	width:70px;
+	margin:-8;
+}
+.bigImg
+{
+	padding-bottom:10px;
+	width:514px;
+	border-radius:10px 0 0 0;
+	height:300px
+	
+}
+#selectDataTokio, #selectDataLondon ,#selectDataParis
+{
+	border:1px solid #00909e;
+	display:none;
+}
+#selectDataTokio input:hover, #selectDataLondon input:hover,#selectDataParis input:hover
+{cursor:pointer}
+#selectDataTokio span ,#selectDataLondon span ,#selectDataParis span
+{
+	font-weight:bold;
+	font-size:20;
+	margin-left:20px;
+}
+.finalButton
+{
+	margin:-20 0 20 20;
+}
+#roomNoTokio ,#roomNoLondon ,#roomNoParis
+{
+	background-color:#00909e;
+	color:white;
+}
+.section2
+{
+	float:left;
+	padding-left:10;
+	width:500px;
+}
+h3 {
+  display: inline-block;
+  padding-left: 30px;
+  margin-bottom:80px;
+}
+span
+{
+	line-height:25px;
+}
+.section3
+{
+	float:left;
+	width:155px;
+	height:50px;
+	font-size:20;
+}
+.flag
+{
+	height:15px;
+	width:20px
+}
+.cityName
+{
+	color:#888888;
+	font-size:15px;
+}
+.section4
+{
+	float:left;
+	margin-top:63;
+	width:155px;
+	height:287px;
+}
+.rateString
+{
+	float:left;
+	color:#00909e;
+	font-size:20;
+	margin:0 14 0 0;
+}
+.rateInt
+{
+	background-color:#00909e;
+	color:white;
+	border-radius:10px 10px 10px 0;
+	padding:10;
+	width:15px;
+	float:left;
+}
+.priceinfo
+{
+	float:left;
+	margin-top:30px;
+	color:#888888;
+}
+.price
+{
+	font-size:30px;
+	color:green;
+}
+.bottonPlace
+{
+	margin-top:200px
+}
+.bookBotton
+{
+	background-color:white;
+	border-color:#00909e;
+	color:#00909e;
+	width:150;
+	height:35;
+	cursor:pointer;
+}
+.bookBotton:hover
+{
+	background-color:#00909e;
+	color:white;
+	box-shadow: 0 0 5px 5px #141414
+}
+
+
+.imgh{
+    position: absolute;
+    top:0px;
+    right: 10px;
+    cursor: pointer;
+    background-color:crimson;
+	margin-top:0px;
+}
+/* Navbar container */
+.bar {
+    background-color:rgba(0,0,0,0.5);
+    width:1000px;
+    border-radius: 10px;
+    margin:7px;
+  overflow: hidden;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.bar a {
+  float: left;
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.bar a:hover{
+    background-color:rgba(255, 0, 0, 0.7);
+    color:#fff;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .menubtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #000;
+  padding: 14px 16px;
+  background-color: inherit;
+  font: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+  height:45px;
+  width:100px;
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .menubtn {
+  background-color:rgba(255, 0, 0, 0.8);
+    color: #fff;
+}
+
+/* Dropdown content (hidden by default) */
+.menu-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  width:1000px;
+  left: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 3;
+    border-radius: 10px;
+}
+
+/*Menu header, if needed */
+.menu-content .header {
+  background:rgba(255, 0, 0, 0.8);
+  padding: 16px;
+  color: white;
+    border-radius: 5px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .menu-content {
+  display: block;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  background-color:hsla(0, 100%, 90%, 0.3);;
+  height: 250px;
+}
+
+/* Style links inside the columns */
+.column a {
+  float: none;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a background color on hover */
+.column a:hover {
+  background-color:firebrick;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
