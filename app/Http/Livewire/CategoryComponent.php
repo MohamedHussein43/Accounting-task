@@ -22,13 +22,15 @@ class CategoryComponent extends Component
 
     }
     private function get_category_by_name($categoryName){
-        $lowerCaseCategoryName = strtolower($categoryName);
+        /*$lowerCaseCategoryName = strtolower($categoryName);
         //$user_id = DB::table('users')->where('username', $user_input)->first()->id;
-        $category = Category::where('name', '=', $categoryName)->first();
-        return $category ;
+        $category = Category::where('name', '=', $categoryName)->first();*/
+        $category = Category::where('name',$categoryName)->first();
+        return $category->id ;
     }
     public function saveToDatabase(){
-        $p_id = $this->parent_category_name;
+        
+        $p_id = $this->get_category_by_name($this->parent_category_name);
         if ($p_id)
         {
             $category = Category::create([
