@@ -100,10 +100,6 @@
         
     </div>
 
-    <script>
 
-
-    </script>
-  
 
 </div>

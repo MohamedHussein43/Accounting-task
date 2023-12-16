@@ -26,7 +26,7 @@ class CategoryComponent extends Component
         //$user_id = DB::table('users')->where('username', $user_input)->first()->id;
         $category = Category::where('name', '=', $categoryName)->first();*/
         $category = Category::where('name',$categoryName)->first();
-        return $category->id ;
+        return $category ? $category->id : null;
     }
     public function saveToDatabase(){
         

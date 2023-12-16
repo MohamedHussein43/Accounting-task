@@ -24,10 +24,10 @@ class DatabaseSeeder extends Seeder
        SubCategory::factory(6)->create();
        
        ThirdCategory::factory(6)->create();*/
-       //Category::factory(6)->create();
+       Category::factory(6)->create();
 
 
-       AccountingPanal::factory()->count(5)->create();
+       //AccountingPanal::factory()->count(5)->create();
 
 
        /*$topLevelCategories = Category::factory(5)->create();

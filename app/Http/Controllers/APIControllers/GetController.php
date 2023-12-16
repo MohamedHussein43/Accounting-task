@@ -12,7 +12,8 @@ class GetController extends Controller
         return Category::all();
     }
     public function GetCategoryByName($name = null){
-        return $name? Category::where('name',$name)->first() : ["name" => "You have to enter a name"];        
+        $category = Category::where('name',$name)->first();
+        return $category ? $category : null;        
     }
     public function AddNewCategory(Request $req){
         $roles = array(
@@ -29,7 +30,10 @@ class GetController extends Controller
             if($req->name)
             {
                 $parent = $this->GetCategoryByName($req->parent_name);
-                $parentId = $parent->id;
+                if($parent)
+                {$parentId = $parent->id;}
+                else                
+                {return ["result" => "Please enter valed parent name."];}
             }
 
                 $category = new Category();
