@@ -118,7 +118,7 @@
                                         <small class="text-light fw-semibold mb-3">New Category Name</small>
                                         <div class="mt-3">
                                             
-                                            <input class="form-control phone-mask" type="text" id="myInput2" wire:model="category_name" value="" >
+                                            <input class="form-control phone-mask" required type="text" id="myInput2" wire:model="category_name" value="" >
                                         
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
                                         <small class="text-light fw-semibold mb-3">Parent Category ID</small>
                                         <div class="mt-3">
                                             
-                                            <input class="form-control phone-mask" type="text" id="myInput3" wire:model="parent_category_name" value="" >
+                                            <input class="form-control phone-mask" required type="text" id="myInput3" wire:model="parent_category_name" value="" >
                                                             
                                             </div>
                                         

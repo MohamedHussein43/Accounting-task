@@ -39,7 +39,7 @@ class CategoryComponent extends Component
         $this->reset();
         $this->mount();
         // Trigger a full-page refresh
-        $this->emit('$refresh');
+        //$this->emit('$refresh');
     }
     public function render()
     {
