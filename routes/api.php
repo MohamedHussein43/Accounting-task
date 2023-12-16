@@ -18,6 +18,8 @@ use App\Http\Controllers\APIControllers\GetController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('ListCategories',[GetController::class,'ListCategories'] );
-Route::get('getCategoryByName/{name?}',[GetController::class,'GetCategoryByName'] );
-Route::post('AddNewCategory',[GetController::class,'AddNewCategory'] );
+Route::group(['prefix' => 'category/'], function () {
+    Route::get('ListCategories',[GetController::class,'ListCategories'] );
+    Route::get('getCategoryByName/{name?}',[GetController::class,'GetCategoryByName'] );
+    Route::post('AddNewCategory',[GetController::class,'AddNewCategory'] );
+});
