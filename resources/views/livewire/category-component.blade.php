@@ -75,7 +75,44 @@
     <div class="container" style="display: flex;width: 100vw;">  
         <div class="container" style="margin-top:30px;font-size: x-large; width: 50%; order: 1;">
             <div class="row">
-                <div class="col-md-7">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                        Categories
+                    </button>
+                    <div class="dropdown-menu p-4">
+                        @foreach($categories as $category)
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                    {{ $category->name }}
+                                </button>
+                                <div class="dropdown-menu p-4">
+                                    @if($category->children->count() > 0)
+                                        @foreach($category->children as $child)
+                                            <div class="dropdown">
+                                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                                    {{ $child->name }}
+                                                </button>
+                                                <div class="dropdown-menu p-4">
+                                                    @if($child->children->count() > 0)
+                                                        @foreach($child->children as $grandchild)
+                                                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                                                {{ $grandchild->name }}
+                                                            </button>
+                                                            <!-- Continue nesting for more levels if needed -->
+                                                        @endforeach
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                
+                
+                {{--<div class="col-md-7">
                     <ul id="tree1">
                         <ul>
                             @foreach($categories as $category)
@@ -102,7 +139,7 @@
                             @endforeach
                         </ul>
                     </ul>
-                </div>
+                </div>--}}
             </div>
         </div>
           

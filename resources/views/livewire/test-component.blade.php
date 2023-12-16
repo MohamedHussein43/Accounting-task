@@ -19,6 +19,25 @@
             @endforeach
         </ul>
     </div>
-
+    
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+          Dropdown form
+        </button>
+        <div class="dropdown-menu p-4">
+          
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                  Dropdown form
+                </button>
+                <div class="dropdown-menu p-4">
+                  dfadsf
+                  
+                </div>
+            </div>
+          
+        </div>
+    </div>
+        
 
 </div>
