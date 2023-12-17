@@ -18,9 +18,9 @@ class GetController extends Controller
     public function GetCategoryByName($name = null){
         if ($name){
             $category = Category::where('name',$name)->first();
-            return $category ? $category : ["Result" => "This category does not exist!"];   
+            return $category ? response()->json($category,200) : response()->json(["Result" => "This category does not exist!"],400);   
         }     
-        else return ["Result" => "You must pass the category name"];
+        else return response()->json(["Result" => "You must pass the category name"],400);
     }
 
     public function getOwnerById($id = null){

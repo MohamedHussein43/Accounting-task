@@ -4,7 +4,9 @@ namespace App\Http\Controllers\APIControllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Category;
+use App\Models\AccountingPanal;
+use Validator;
 class SetController extends Controller
 {
     public function AddNewCategory(Request $req){
@@ -21,8 +23,9 @@ class SetController extends Controller
             $parentId;
             if($req->name)
             {
-                $parent = $this->GetCategoryByName($req->parent_name);
-                if($parent)
+                $category = new GetController();
+                $parent = $category->GetCategoryByName($req->parent_name);
+                if($parent->getStatusCode() === 200)
                 {$parentId = $parent->id;}
                 else                
                 {return ["result" => "Please enter valed parent name."];}
