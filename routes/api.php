@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\APIControllers\GetController;
 use App\Http\Controllers\APIControllers\SetController;
+use App\Http\Controllers\APIControllers\UpdateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,9 @@ Route::group(['prefix' => 'accounting/'], function () {
     Route::get('getOwnerById/{id?}',[GetController::class,'getOwnerById'] );
     Route::get('getOwnerByName/{name?}',[GetController::class,'getOwnerByName'] );
     Route::post('AddNewOwner',[SetController::class,'AddNewOwner'] );
+    Route::put('UbdateOwner',[UpdateController::class,'UbdateOwner'] );
+});
+
+Route::group(['prefix' => 'admin/'], function () {
+    Route::get('getAllAdminRevenue',[GetController::class,'getAllAdminRevenue'] );
 });

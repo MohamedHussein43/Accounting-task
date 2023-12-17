@@ -38,5 +38,8 @@ class GetController extends Controller
         }     
         else return ["Result" => "You must pass the owner name"];     
     }
+    public function getAllAdminRevenue(){
+        return AccountingPanal::sum('total_admin_revenue');
+    }
     
 }

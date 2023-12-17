@@ -53,11 +53,11 @@ class SetController extends Controller
             'service_name'          => 'required|string|max:255',
             'initial_price'         => 'required|numeric|min:0',
             'tax_type'              => 'required|in:0,1',
-            'tax'                   => 'nullable|numeric|min:0',
+            'tax'                   => 'required|numeric|min:0',
             'admin_tax_type'        => 'required|in:0,1',
-            'admin_tax'             => 'nullable|numeric|min:0',
-            'total_owner_revenue'   => 'nullable|numeric|min:0',
-            'total_admin_revenue'   => 'nullable|numeric|min:0',
+            'admin_tax'             => 'required|numeric|min:0',
+            'total_owner_revenue'   => 'required|numeric|min:0',
+            'total_admin_revenue'   => 'required|numeric|min:0',
         );
         $validator = Validator::make($req->all(), $roles);
         if($validator->fails()){
