@@ -46,4 +46,31 @@ class SocialiteController extends Controller
             dd($e->getMassage());
         }
     }
+
+    public function handleFacebookCallback()
+    {
+        try{
+            $user = Socialite::driver('facebook')->user();
+            $finduser = User::where('social_id', $user->id)->first();
+            if($finduser){
+                Auth::login($finduser);
+                return response()->json($finduser);
+            }
+            else{
+                $newUser = User::create([
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'social_id' => $user->id,
+                    'social_type' => 'facebook',
+                    'password' => Hash::make('my-facebook'),
+                ]);
+                Auth::login($newUser);
+                return response()->json($newUser);
+            }
+
+        }
+        catch(Exception $e){
+            dd($e->getMassage());
+        }
+    }
 }

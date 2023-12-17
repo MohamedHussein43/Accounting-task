@@ -35,5 +35,10 @@ return [
         'client_secret' => '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',
         'redirect' => 'http://localhost:8000/auth/google/callback',
     ],
+    'facebook' => [
+        'client_id' => '729722148721761',
+        'client_secret' => '1265ca9daf9c6c64214f3a830eb4f495',
+        'redirect' => 'http://localhost:8000/auth/facebook/callback',
+    ],
 
 ];

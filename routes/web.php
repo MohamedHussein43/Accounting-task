@@ -28,3 +28,6 @@ Route::get('accounting-panal',AccountingPanalComponent::class)->name('accounting
 Route::get('test',TestComponent::class);
 Route::get('auth/google',[SocialiteController::class,'redirectToGoogle'])->name('google');
 Route::get('auth/google/callback',[SocialiteController::class,'handleGoogleCallback']);
+
+Route::get('auth/facebook',[SocialiteController::class,'redirectToFacebook'])->name('facebook');
+Route::get('auth/facebook/callback',[SocialiteController::class,'handleFacebookCallback']);
