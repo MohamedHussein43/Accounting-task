@@ -7,6 +7,7 @@ use App\http\livewire\TestComponent;
 use App\http\livewire\AccountingPanalComponent;
 use App\http\Controllers\Controller;
 use App\http\Controllers\CategoryController;
+use App\http\Controllers\SocialMediaControllers\SocialiteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,5 @@ Route::get('/',YourComponentName::class);
 Route::get('categories',CategoryComponent::class)->name('categories');
 Route::get('accounting-panal',AccountingPanalComponent::class)->name('accounting-panal');
 Route::get('test',TestComponent::class);
+Route::get('auth/google',[SocialiteController::class,'redirectToGoogle'])->name('google');
+Route::get('auth/google/callback',[SocialiteController::class,'handleGoogleCallback']);
