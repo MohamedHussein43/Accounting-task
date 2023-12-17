@@ -29,4 +29,5 @@ Route::group(['prefix' => 'accounting/'], function () {
     Route::get('getAllOwners',[GetController::class,'ListOwners'] );
     Route::get('getOwnerById/{id?}',[GetController::class,'getOwnerById'] );
     Route::get('getOwnerByName/{name?}',[GetController::class,'getOwnerByName'] );
+    Route::post('AddNewOwner',[SetController::class,'AddNewOwner'] );
 });
