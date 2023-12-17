@@ -13,7 +13,12 @@ class GetController extends Controller
         return Category::all();
     }
     public function ListOwners(){
-        return AccountingPanal::all();
+        $admin_revene = AccountingPanal::sum('total_admin_revenue');
+        $all_data = [
+            "Total admin revenue" => $admin_revene,
+            "All owners data" => AccountingPanal::all()
+    ];
+        return $all_data;
     }
     public function GetCategoryByName($name = null){
         if ($name){
