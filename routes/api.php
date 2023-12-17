@@ -21,9 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'category/'], function () {
     Route::get('ListCategories',[GetController::class,'ListCategories'] );
     Route::get('getCategoryByName/{name?}',[GetController::class,'GetCategoryByName'] );
-    Route::post('AddNewCategory',[GetController::class,'AddNewCategory'] );
+    Route::post('AddNewCategory',[SetController::class,'AddNewCategory'] );
 });
 
 Route::group(['prefix' => 'accounting/'], function () {
     Route::get('getAllOwners',[GetController::class,'ListOwners'] );
+    Route::get('getOwnerById/{id?}',[GetController::class,'getOwnerById'] );
+    Route::get('getOwnerByName/{name?}',[GetController::class,'getOwnerByName'] );
 });
