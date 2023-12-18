@@ -31,3 +31,13 @@ Route::get('auth/google/callback',[SocialiteController::class,'handleGoogleCallb
 
 Route::get('auth/facebook',[SocialiteController::class,'redirectToFacebook'])->name('facebook');
 Route::get('auth/facebook/callback',[SocialiteController::class,'handleFacebookCallback']);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
