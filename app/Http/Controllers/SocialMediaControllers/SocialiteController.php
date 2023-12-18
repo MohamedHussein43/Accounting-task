@@ -27,7 +27,7 @@ class SocialiteController extends Controller
             $finduser = User::where('social_id', $user->id)->first();
             if($finduser){
                 Auth::login($finduser);
-                return response()->json($finduser);
+                return redirect()->route('dashboard');
             }
             else{
                 $newUser = User::create([
@@ -38,7 +38,7 @@ class SocialiteController extends Controller
                     'password' => Hash::make('my-google'),
                 ]);
                 Auth::login($newUser);
-                return response()->json($newUser);
+                return redirect()->route('dashboard');
             }
 
         }
@@ -54,7 +54,7 @@ class SocialiteController extends Controller
             $finduser = User::where('social_id', $user->id)->first();
             if($finduser){
                 Auth::login($finduser);
-                return response()->json($finduser);
+                return redirect()->route('dashboard');
             }
             else{
                 $newUser = User::create([
@@ -65,7 +65,7 @@ class SocialiteController extends Controller
                     'password' => Hash::make('my-facebook'),
                 ]);
                 Auth::login($newUser);
-                return response()->json($newUser);
+                return redirect()->route('dashboard');
             }
 
         }

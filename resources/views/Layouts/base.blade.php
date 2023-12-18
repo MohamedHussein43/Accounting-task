@@ -512,20 +512,33 @@
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
-                <li class="nav-item lh-1 me-3">
-                  <a
-                    class="btn btn-primary"
-                    href="{{route('google')}}"
-                    >Login with Google</a
-                  >
-                </li>
-                <li class="nav-item lh-1 me-3">
-                  <a
-                    class="btn btn-primary"
-                    href="{{route('facebook')}}"
-                    >Login with Facebook</a
-                  >
-                </li>
+                @if (Route::has('login'))
+                  
+                      @auth
+                          <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+                      @else
+                     
+                      <li class="nav-item lh-1 me-3">
+                        <a
+                        class="btn btn-primary"
+                        href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a
+                        >
+                      </li>
+                      <li class="nav-item lh-1 me-3">
+                        
+                        @if (Route::has('register'))
+                              
+                        <a
+                          class="btn btn-primary"
+                          href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a
+                        >
+                          @endif
+                      </li>
+                          
+                      @endauth
+                  
+                @endif
+                
                 <li class="nav-item lh-1 me-3">
                   <a
                     class="github-button"
