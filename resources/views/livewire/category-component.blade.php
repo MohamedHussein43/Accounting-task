@@ -5,6 +5,7 @@
     <div class="container" style="display: flex;width: 100%;">  
         <div class="container" style="margin-top:30px;font-size: x-large; width: 50%; order: 1;">
             <div class="row">
+                {{--
                 <div class="dropdown">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                         Categories
@@ -13,7 +14,7 @@
                         @foreach($categories as $category)
                             <div class="dropdown">
                                 <button type="button" style="margin-bottom: 10px" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                                    {{ $category->name }}
+                                    {{ $category->name }} 
                                 </button>
                                 <div class="dropdown-menu p-4">
                                     @if($category->children->count() > 0)
@@ -39,10 +40,28 @@
                             </div>
                         @endforeach
                     </div>
+                    
                 </div>
-                
-                
-                
+            --}}
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                        Categories
+                    </button>
+                    <div class="dropdown-menu p-4">
+                        @foreach($categories as $category)
+                            <div class="dropdown">
+                                <button type="button" style="margin-bottom: 10px" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                                    {{ $category->name }}
+                                </button>
+                                <div class="dropdown-menu p-4">
+                                    @if(count($category->children))
+                                        @include('livewire/manage-child',['children' => $category->children])
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
             </div>
         </div>
           
@@ -58,7 +77,7 @@
                                         <small class="text-light fw-semibold mb-3">New Category Name</small>
                                         <div class="mt-3">
                                             
-                                            <input class="form-control phone-mask"  required type="text" id="myInput2" wire:model="category_name" value="" >
+                                            <input class="form-control phone-mask"  required type="text" id="myInput2" wire:model.prevent="category_name" value="" >
                                         
                                         </div>
                                     </div>
@@ -66,7 +85,7 @@
                                         <small class="text-light fw-semibold mb-3">Parent Category Name</small>
                                         <div class="mt-3">
                                             
-                                            <input class="form-control phone-mask" style="margin-left: 5px" required type="text" id="myInput3" wire:model="parent_category_name" value="" >
+                                            <input class="form-control phone-mask" style="margin-left: 5px" required type="text" id="myInput3" wire:model.prevent="parent_category_name" value="" >
                                                             
                                             </div>
                                         
